@@ -3,42 +3,21 @@
     <strong>Name:</strong>
     <%= event.name %>
   </p>
-
-  <p>
-    <strong>User:</strong>
-    <%= event.user_id %>
-  </p>
-
+  
   <p>
     <strong>Date:</strong>
     <%= event.event_date %>
   </p>
-  <p>
-    <strong>Days left:</strong>
-    <% now = (event.event_date - Time.now) %>
-    <%= (now / (60 * 60 * 24)).floor %>
-  </p>
-  <p>
-    <strong>Hours left:</strong>
-    <%= ((now % (60 * 60 * 24)) / (60 * 60)).floor %>
-  </p>
-  <p>
-    <strong>Minutes left:</strong>
-    <%= ((now % (60 * 60)) / (60)).floor %>
-  </p>
-  <p>
-    <strong>Seconds left:</strong>
-    <%= (now % (60)).floor %>
-  </p>
+  <strong>Until event:</strong>
   <p id="demo"></p>
 
   <script>
-      <% t = (event.event_date).to_i%>
-      <% Time.at(t).utc.iso8601%>
-      var d = new Date(<%=t * 1000%>);
-      console.log(new Date(d).valueOf());
+      <% time = (event.event_date).to_i%>
+      <% Time.at(time).utc.iso8601%>
+      var js_time = new Date(<%=time * 1000%>);
+      console.log(new Date(js_time).valueOf());
       // Set the date we're counting down to
-      var countDownDate = new Date(d).getTime();
+      var countDownDate = new Date(js_time).getTime();
 
       // Update the count down every 1 second
       var x = setInterval(function () {
