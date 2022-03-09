@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
   before_action :set_event, only: %i[ show edit update destroy ]
-  before_action :authenticate_user!
-
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :correct_user, only: [:edit, :update, :destroy]
   # GET /events or /events.json
   def index
     @events = Event.all
@@ -9,21 +9,29 @@ class EventsController < ApplicationController
 
   # GET /events/1 or /events/1.json
   def show
-
+    @event = current_user.events.find_by(id: params[:id])
+    redirect_to events_path if @event.nil?
   end
 
   # GET /events/new
   def new
-    @event = Event.new
+    # @event = Event.new
+    @event = current_user.events.build
   end
 
   # GET /events/1/edit
   def edit
   end
 
+  def correct_user
+    @event = current_user.events.find_by(id: params[:id])
+    redirect_to events_path, notice: "Not authorized" if @event.nil?
+  end
+
   # POST /events or /events.json
   def create
-    @event = Event.new(event_params)
+    # @event = Event.new(event_params)
+    @event = current_user.events.build(event_params)
 
     respond_to do |format|
       if @event.save
