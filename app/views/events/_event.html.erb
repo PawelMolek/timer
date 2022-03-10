@@ -1,20 +1,18 @@
-<div id="<%= dom_id event %>">
-  <%= javascript_include_tag "application" %>
-  <div>
-    <p>
-      <strong>Name:</strong>
-      <%= event.name %>
-    </p>
 
-    <p>
-      <strong>Date:</strong>
-      <%= event.event_date %>
-    </p>
-    <strong>Until event:</strong>
-    <div id="demo">
-      <script>
-          event_time(<%= raw(event.event_date.to_i*1000) %>);
-      </script>
-    </div>
+  <div id="<%= dom_id event %>">
+      <p>
+        <strong>Name:</strong>
+        <%= event.name %>
+      </p>
+
+      <p>
+        <strong>Date:</strong>
+        <%= event.event_date %>
+      </p>
+      <strong>Until event:</strong>
+      <p id="demo">
+        <script>
+            event_time(<%= raw(event.event_date.to_i*1000) %>);
+        </script>
+      </p>
   </div>
-</div>

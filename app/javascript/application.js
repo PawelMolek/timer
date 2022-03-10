@@ -2,6 +2,7 @@
 import "@hotwired/turbo-rails"
 import "controllers"
 
+
     window.event_time = function (time) {
     // var js_time = new Date(time*1000);
     console.log(new Date(time).valueOf());
