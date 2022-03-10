@@ -20,7 +20,7 @@
     <%= form.number_field :user_id, id: :event_user_id, class: "form-control", value: current_user.id, type: :hidden %>
   </div>
   <div>
-    <%= form.datetime_select :event_date, class: "form-control selectpicker", :default => {:hour => 00, :minute => 00} %>
+    <%= form.datetime_select :event_date, class: "form-control selectpicker", :default => { :hour => 00, :minute => 00 } %>
   </div>
 
   <div>
