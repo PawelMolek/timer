@@ -15,6 +15,7 @@ class EventsController < ApplicationController
 
   # GET /events/new
   def new
+
     # @event = Event.new
     @event = current_user.events.build
   end
@@ -32,7 +33,6 @@ class EventsController < ApplicationController
   def create
     # @event = Event.new(event_params)
     @event = current_user.events.build(event_params)
-
     respond_to do |format|
       if @event.save
         format.html { redirect_to event_url(@event), notice: "Event was successfully created." }
@@ -46,6 +46,7 @@ class EventsController < ApplicationController
 
   # PATCH/PUT /events/1 or /events/1.json
   def update
+
     respond_to do |format|
       if @event.update(event_params)
         format.html { redirect_to event_url(@event), notice: "Event was successfully updated." }
@@ -79,3 +80,4 @@ class EventsController < ApplicationController
     params.require(:event).permit(:name, :user_id, :event_date)
   end
 end
+
