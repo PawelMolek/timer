@@ -17,7 +17,7 @@
           </li>
         <% end %>
       </ul>
-      <div class="text-end ms-auto">
+      <div class="text-end">
         <% if user_signed_in? %>
           <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: "btn btn-warning" %>
         <% else %>

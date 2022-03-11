@@ -1,14 +1,15 @@
-<p style="color: green"><%= notice %></p>
+<!--<p style="color: green"><%#= notice %></p>-->
 
-<h1>Events</h1>
-<div id="events">
-
+<div id="container ">
+  <h1>Events</h1>
   <% @events.each do |event| %>
     <% if event.user == current_user %>
-      <%= render event %>
-      <p>
+      <div class="row border border-1 border-dark">
+
+        <%= render event %>
         <%= link_to "Show this event", event %>
-      </p>
+      </div>
+
     <% end %>
   <% end %>
 </div>

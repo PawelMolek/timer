@@ -14,16 +14,18 @@
   </head>
 
   <body>
-  <header>
-    <%= render "home/header" %>
-  </header>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-  <div>
-    <%= yield %>
-  </div>
-  <footer>
-    <%= render "home/footer" %>
-  </footer>
+    <div class="container">
+      <div class="row border border-2 border-danger my-3">
+        <%= render "home/header" %>
+      </div>
+      <div class="row border border-2 border-danger my-3 mh-50">
+<!--        <p class="notice"><%#= notice %></p>-->
+<!--        <p class="alert"><%#= alert %></p>-->
+        <%= yield %>
+      </div>
+      <div class="row fixed-bottom border border-2 border-danger mt-auto">
+        <%= render "home/footer" %>
+      </div>
+    </div>
   </body>
 </html>
