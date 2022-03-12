@@ -91,7 +91,7 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   # This lines included at suggestion from https://guides.rubyonrails.org/asset_pipeline.html
-  config.assets.css_compressor = :yui
-  config.assets.js_compressor = :uglifier
+  # config.assets.css_compressor = :yui
+  # config.assets.js_compressor = :uglifier
 
 end
