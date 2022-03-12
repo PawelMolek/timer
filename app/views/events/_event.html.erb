@@ -1,18 +1,15 @@
-<!--<div id="<%#= dom_id event %>">-->
-<div class="container">
-  <p>
-    <strong>Name:</strong>
-    <%= event.name %>
-  </p>
-
-  <p>
-    <strong>Date:</strong>
-    <%= event.event_date %>
-  </p>
-  <strong>Until event:</strong>
-  <p id="demo">
-    <script>
-        event_time(<%= raw(event.event_date.to_i*1000) %>);
-    </script>
-  </p>
+<div class="container text-center align-content-center border border-2 border-dark py-3 px-3 w-50">
+  <div class="card mb-3">
+    <h1>
+      <%= event.name %>
+    </h1>
+    <h3>
+      <%= event.event_date %>
+    </h3>
+    <p id="demo">
+      <script>
+          event_time(<%= raw(event.event_date.to_i*1000) %>);
+      </script>
+    </p>
+  </div>
 </div>
