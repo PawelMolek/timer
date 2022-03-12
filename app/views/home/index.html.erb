@@ -1,3 +1,9 @@
-<div class="container">
-  <h1>Sign up to be able creating events with time counter.</h1>
-</div>
+<% if user_signed_in? %>
+  <div class="container">
+    <h1>Hello ! Feel free.</h1>
+  </div>
+<% else %>
+  <div class="container">
+    <h1>Sign up to be able creating events with time counter.</h1>
+  </div>
+<% end %>
