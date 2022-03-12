@@ -11,19 +11,21 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name, required: 'true' %>
+  <div class="mt-4 mb-5">
+    <strong>
+      <%= form.label :name, style: "display: block" %>
+    </strong>
+      <%= form.text_field :name, required: 'true' %>
   </div>
 
   <div>
     <%= form.number_field :user_id, id: :event_user_id, class: "form-control", value: current_user.id, type: :hidden %>
   </div>
-  <div>
-    <%= form.datetime_select :event_date, class: "form-control selectpicker", :start_year => Date.current.year, :default => { :hour => 00, :minute => 00 } %>
+  <div class="mt-4 mb-5">
+    <%= form.datetime_select :event_date, class: "form-control", :start_year => Date.current.year, :default => { :hour => 00, :minute => 00 } %>
   </div>
 
-  <div>
-    <%= form.submit %>
+  <div class="mt-4 mb-5">
+    <%= form.submit class: "btn btn-secondary" %>
   </div>
 <% end %>

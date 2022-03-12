@@ -1,14 +1,15 @@
-<!--<p style="color: green"><%#= notice %></p>-->
-
-  <h1>Events</h1>
+<div class="container">
   <% @events.each do |event| %>
     <% if event.user == current_user %>
-      <div class="container border border-5 border-dark my-3 py-3 px-3">
+      <div class="card my-3 py-3 px-3">
         <%= render event %>
-        <%= link_to "Show this event", event %>
+        <div>
+          <%= link_to "Show this event", event, class: "btn btn-warning" %>
+        </div>
       </div>
 
     <% end %>
   <% end %>
 
-<%= link_to "New event", new_event_path %>
+  <%= link_to "New event", new_event_path, class: "btn btn-dark" %>
+</div>
