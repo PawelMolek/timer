@@ -92,6 +92,6 @@ Rails.application.configure do
 
   # This lines included at suggestion from https://guides.rubyonrails.org/asset_pipeline.html
   config.assets.css_compressor = :yui
-  config.assets.js_compressor = :terser
+  config.assets.js_compressor = :uglifier
 
 end
