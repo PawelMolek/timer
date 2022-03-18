@@ -16,7 +16,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_09_112733) do
     t.integer "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.datetime "event_date"
+    t.datetime "event_date", precision: nil
     t.index ["user_id"], name: "index_events_on_user_id"
   end
 
@@ -26,6 +26,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_09_112733) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.string "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string "unconfirmed_email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true

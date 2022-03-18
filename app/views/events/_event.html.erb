@@ -7,6 +7,7 @@
       <p class="lead">
         <%= event.event_date %>
       </p>
+      <p><%= raw(event.event_date.to_i * 1000) %></p>
     </div>
     <div class="bg-dark shadow-sm mx-auto mb-5 text-light" id="demo" style="width: 70%; height: 300px; border-radius: 21px 21px 21px 21px;">
       <script>

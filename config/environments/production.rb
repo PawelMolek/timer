@@ -61,7 +61,21 @@ Rails.application.configure do
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "timer_production"
 
-  config.action_mailer.perform_caching = false
+  config.active_record.dump_schema_after_migration = false
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address:              'smtp.gmail.com',
+    port:                 587,
+    domain:               'heroku.com',
+    user_name:            ENV["mailgun_user_name"],
+    password:             ENV["mailgun_password"],
+    authentication:       'plain',
+    enable_starttls_auto: true,
+    open_timeout:         5,
+    read_timeout:         5 }
+
+  config.action_mailer.default_url_options = { :host => 'https://sleepy-atoll-63040.herokuapp.com/' }
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.

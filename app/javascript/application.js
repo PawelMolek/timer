@@ -3,7 +3,7 @@ import "@hotwired/turbo-rails"
 import "controllers"
 
 
-    window.event_time = function (time) {
+window.event_time = function (time) {
     // var js_time = new Date(time*1000);
     console.log(new Date(time).valueOf());
     // Set the date we're counting down to
@@ -35,4 +35,5 @@ import "controllers"
         }
     }, 1000);
 }
+
 

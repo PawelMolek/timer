@@ -1,8 +1,10 @@
+
 <div class="container">
   <% @events.each do |event| %>
     <% if event.user == current_user %>
       <div class="card my-3 py-3 px-3">
         <%= render event %>
+
         <div>
           <%= link_to "Show this event", event, class: "btn btn-warning" %>
         </div>

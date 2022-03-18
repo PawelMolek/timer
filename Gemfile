@@ -15,6 +15,7 @@ gem 'devise', '~> 4.8', '>= 4.8.1'
 gem 'sassc-rails', '~> 2.1', '>= 2.1.2'
 gem 'terser', '~> 1.1', '>= 1.1.8'
 gem 'yui-compressor', '~> 0.12.0'
+gem "figaro"
 
 group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
